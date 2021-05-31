@@ -5,6 +5,9 @@
 ## Wersja live :rocket:
 https://oko-task-service.herokuapp.com/graphql
 
+dane do testow:<br/>
+https://gist.github.com/arkinem/ae9930ad3e3f938fef60eafc01c21ff7
+
 ## Wprowadzenie :book:
 
 Poczatkowo wydawalo mi sie, ze jest to to klasyczny problem n + 1, stad sugestia by uzywac `dataloader`. Po zglebieniu polecenia uznalam ze jest mi on zbedny, ale w rzeczywistosci skonsultowalabym jeszcze uzycie go do wczytania rodzicow zadania z bardziej doswiadczonym uzytkownikiem tej biblioteki.
