@@ -3,5 +3,5 @@ module.exports = {
 	database: "database.sqlite",
 	synchronize: true,
 	logging: true,
-	entities: ["src/entities/**/*.*"],
+	entities: ["src/entities/**/*"],
 };
