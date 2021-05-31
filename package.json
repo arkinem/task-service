@@ -3,13 +3,20 @@
   "version": "0.0.1",
   "devDependencies": {
     "@types/express": "^4.17.2",
+    "@types/faker": "^5.5.5",
+    "@types/jest": "^26.0.23",
     "@types/node": "^12.12.8",
+    "faker": "^5.5.3",
+    "jest": "^27.0.3",
     "nodemon": "^1.19.4",
-    "ts-node": "8.5.2",
+    "ts-jest": "^27.0.1",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^1.1.6",
     "typescript": "3.8.2"
   },
   "dependencies": {
     "apollo-server-express": "^2.9.9",
+    "class-validator": "^0.13.1",
     "express": "^4.17.1",
     "graphql": "^14.5.8",
     "pg": "^7.13.0",
@@ -19,7 +26,10 @@
     "typeorm": "0.2.20"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node src/index.ts",
-    "build": "tsc"
+    "start": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "db:setup": "ts-node ./tests/utils/setup.ts",
+    "test": "npm run db:setup && jest --runInBand",
+    "test:watch": "npm run db:setup && jest --runInBand --watch"
   }
 }

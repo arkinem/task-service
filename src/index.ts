@@ -1,10 +1,9 @@
 import "reflect-metadata";
 import express from "express";
-import { buildSchema } from "type-graphql";
 import { ApolloServer } from "apollo-server-express";
 import { createConnection, getConnectionOptions } from "typeorm";
 
-import { TaskResolver } from "./resolvers/TaskResolver";
+import { createSchema } from "./schema";
 
 const main = async () => {
 	const app = express();
@@ -12,11 +11,10 @@ const main = async () => {
 	const options = await getConnectionOptions();
 	await createConnection({ ...options, name: "default" });
 
+	const schema = await createSchema();
+
 	const apolloServer = new ApolloServer({
-		schema: await buildSchema({
-			resolvers: [TaskResolver],
-			validate: true,
-		}),
+		schema,
 		context: ({ req, res }) => ({ req, res }),
 	});
 
