@@ -2,13 +2,13 @@
 
 [![test](https://github.com/arkinem/task-service/actions/workflows/test.yml/badge.svg)](https://github.com/arkinem/task-service/actions/workflows/test.yml)
 
-## Wersja live :rocket:
+## :rocket: Wersja live 
 https://oko-task-service.herokuapp.com/graphql
 
 dane do testow:<br/>
 https://gist.github.com/arkinem/ae9930ad3e3f938fef60eafc01c21ff7
 
-## Wprowadzenie :book:
+## :book: Wprowadzenie 
 
 Poczatkowo wydawalo mi sie, ze jest to to klasyczny problem n + 1, stad sugestia by uzywac `dataloader`. Po zglebieniu polecenia uznalam ze jest mi on zbedny, ale w rzeczywistosci skonsultowalabym jeszcze uzycie go do wczytania rodzicow zadania z bardziej doswiadczonym uzytkownikiem tej biblioteki.
 
@@ -24,7 +24,7 @@ Wykonuje tylko jedno zapytanie do bazy danych - wczytuje wszystkie taski wraz z 
 
 Nie mam pewnosci czy udalo mi sie znalezc najbardziej wydajny sposob - aby wczytac rodzica, trzeba znac jego `id` wiec task musi byc wczytany. podobnie z rodzicem rodzica, nie da sie przewidziec jakie bedzie mial `id` bez wczytania samego rodzica. To powoduje wiele zapytan do bazy danych - dla kazdego poziomu. Byc moze tutaj dataloader moglby usprawnic ten proces.
 
-## Docker :whale:
+## :whale: Docker 
 
 zbuduj:
 ```
@@ -35,7 +35,7 @@ uruchom:
 docker run -p 4000:4000 task-service
 ```
 
-## Uruchom lokalnie :hammer_and_wrench:
+## :hammer_and_wrench: Uruchom lokalnie 
 
 Zainstaluj zaleznosci:
 ```
@@ -52,7 +52,7 @@ Otworz interfejs w przegladarce:
 http://localhost:4000/graphql
 ```
 
-## Testuj lokalnie :test_tube:
+## :test_tube: Testuj lokalnie 
 
 Na ten moment projekt zawiera jedynie testy integracyjne.
 
@@ -71,7 +71,7 @@ Mozesz takze uruchomic `jest` w trybie obserwacji zmian:
 yarn test:watch
 ```
 
-## Pomysly na przyszlosc :bulb: 
+## :bulb: Pomysly na przyszlosc 
 Z racji ograniczen czasowych i malej skali projektu pewne pomysly bylyby przesada, ale mysle ze warto je tu wymienic:
 - Wstrzykiwanie zaleznosci (DI), repozytorium, wieksza modularnosc kodu - to pozwoli dodac testy jednostkowe
 - Cache (np. Redis) - nie ma mozliwosci edycji lub usuniecia tasku, wiec cache mogloby znaczaco zaoszczedzic zasoby
